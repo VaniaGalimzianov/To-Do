@@ -1,63 +1,17 @@
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-Do</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To-Do App</title>
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="icon" href="img/file-ruled.svg" type="image/x-icon">
 </head>
-
 <body>
-    <header class="header">
-        <div class="logo">
-            <a href="index.html"><img src="img/to-do-logo.svg" alt="Logo" class="logo-img"></a>
-        </div>
-
-        <div class="switch-lang">
-            <span class="lang-name">Рус</span>
-            <div class="header-lang">
-                <label class="switch">
-                    <input type="checkbox" class="lang-switch">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <span class="lang-name">Eng</span>
-        </div>
-    </header>
-
-    <main class="todo-container">
-        <h1 class="todo-title">To–Do App</h1>
-
-        <div class="todo-controls">
-            <div class="filter-buttons">
-                <button class="filter-btn active">Все</button>
-                <button class="filter-btn">Выполненные</button>
-                <button class="filter-btn">Невыполненные</button>
-            </div>
-
-            <div class="todo-actions">
-                <div class="search-box">
-                    <input type="text" placeholder="Искать задачи...">
-                    <img src="img/search-icon.svg" alt="Search" class="search-icon">
-                </div>
-
-                <button class="sort-btn">
-                    Сортировка
-                    <img src="img/filter-icon.svg" alt="Filter" class="sort-icon">
-                    
-                </button>
-
-                <button class="add-task-btn">
-                    Добавить задачу <span class="add-icon">＋</span>
-                </button>
-            </div>
-        </div>
-
-        <div class="task-list">
-            <!-- Сюда позже добавим список задач -->
-        </div>
-    </main>
-
-    <script src="script.js"></script>
+  <!-- Весь DOM создаётся через script.js -->
+  <script src="script.js"></script>
+  <script src="translate.js"></script>
+  <script type="module" src="lang.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
