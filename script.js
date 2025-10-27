@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     main.className = 'todo-container';
     const title = document.createElement('h1');
     title.className = 'todo-title';
-    title.textContent = 'To–Do App';
+    title.textContent = 'Список задач';
     main.appendChild(title);
 
     const controls = document.createElement('div');
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const filterWrapper = document.createElement('div');
     filterWrapper.className = 'filter-buttons';
     const btnAll = document.createElement('button'); btnAll.className='filter-btn active filter-all'; btnAll.textContent='Все'; btnAll.dataset.mode='all';
-    const btnDone = document.createElement('button'); btnDone.className='filter-btn filter-complited'; btnDone.textContent='Выполненные'; btnDone.dataset.mode='done';
+    const btnDone = document.createElement('button'); btnDone.className='filter-btn filter-completed'; btnDone.textContent='Выполненные'; btnDone.dataset.mode='done';
     const btnUndone = document.createElement('button'); btnUndone.className='filter-btn filter-not-completed'; btnUndone.textContent='Невыполненные'; btnUndone.dataset.mode='undone';
     filterWrapper.append(btnAll, btnDone, btnUndone);
 

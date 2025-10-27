@@ -1,25 +1,22 @@
 import { langArr } from './lang.js';
 
-
 const langSwitch = document.querySelector(".lang-switch");
 
 langSwitch.addEventListener('click', function() {
+    const lang = langSwitch.checked ? "en" : "ru";
 
-    if (langSwitch.checked) {
-        for (let key in langArr) {
-            try {
-                document.querySelector('.' +  key).innerHTML = langArr[key]["ru"];
-            } catch {
-                console.log(`Элемент ${key} не найден`);
-            }
+    for (let key in langArr) {
+        const elem = document.querySelector('.' + key);
+        if (!elem) {
+            console.log(`Элемент ${key} не найден`);
+            continue;
         }
-    } else {
-        for (let key in langArr) {
-            try {
-                document.querySelector('.' +  key).innerHTML = langArr[key]["en"];
-            } catch {
-                console.log(`Элемент ${key} не найден`);
-            }
+
+        // Если это input или textarea — меняем placeholder
+        if (elem.tagName === "INPUT" || elem.tagName === "TEXTAREA") {
+            elem.placeholder = langArr[key][lang];
+        } else {
+            elem.innerHTML = langArr[key][lang];
         }
     }
 });
