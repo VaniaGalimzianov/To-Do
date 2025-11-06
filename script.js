@@ -179,7 +179,10 @@ document.addEventListener("DOMContentLoaded", () => {
       emptyState.style.display = 'none';
     }
 
-    tbody.innerHTML = '';
+    while (tbody.firstChild) {
+      tbody.removeChild(tbody.firstChild);
+    }
+
     visible.forEach(task => {
       const tr = document.createElement('tr');
       tr.draggable = true;
@@ -218,9 +221,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const tdActions = document.createElement('td');
       tdActions.style.textAlign = 'right';
       const actionsWrapper = document.createElement('div'); actionsWrapper.className='row-actions';
-      const editBtn = document.createElement('button'); editBtn.className='action-btn'; editBtn.title='Редактировать'; editBtn.innerHTML='✎';
+      const editBtn = document.createElement('button'); editBtn.className='action-btn'; editBtn.title='Редактировать'; editBtn.appendChild(document.createTextNode('✎'));
       editBtn.addEventListener('click', ()=> openModal(task));
-      const delBtn = document.createElement('button'); delBtn.className='action-btn'; delBtn.title='Удалить'; delBtn.innerHTML='🗑';
+      const delBtn = document.createElement('button'); delBtn.className='action-btn'; delBtn.title='Удалить'; delBtn.appendChild(document.createTextNode('🗑'));
       delBtn.addEventListener('click', ()=> {
         if(confirm('Удалить задачу?')) {
           tasks = tasks.filter(t => t.id !== task.id);

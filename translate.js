@@ -16,7 +16,11 @@ langSwitch.addEventListener('click', function() {
         if (elem.tagName === "INPUT" || elem.tagName === "TEXTAREA") {
             elem.placeholder = langArr[key][lang];
         } else {
-            elem.innerHTML = langArr[key][lang];
+            // Очищаем содержимое и вставляем новый текст узлом
+            while (elem.firstChild) {
+                elem.removeChild(elem.firstChild);
+            }
+            elem.appendChild(document.createTextNode(langArr[key][lang]));
         }
     }
 });
